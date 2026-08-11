@@ -1,0 +1,10 @@
+{
+  "name": "vastrai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered multi-tenant fashion commerce platform for Indian ethnic-wear retailers",
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=22"
+  }
+}
