@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: vastrai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vastrai
+      POSTGRES_PASSWORD: vastrai_dev
+      POSTGRES_DB: vastrai
+    ports:
+      - "5432:5432"
+    volumes:
+      - vastrai_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vastrai -d vastrai"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  vastrai_postgres_data:
